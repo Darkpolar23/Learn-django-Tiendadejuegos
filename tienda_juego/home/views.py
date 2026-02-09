@@ -8,4 +8,4 @@ def index(request):
 
 #vista de la pgian conctato
 def conctato(request):
-    return  render(request, 'home/conctato.html')
+    return  render(request, 'home/contacto.html')
