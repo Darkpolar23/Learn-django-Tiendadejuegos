@@ -7,5 +7,5 @@ def index(request):
     return  render(request, 'home/index.html')
 
 #vista de la pgian conctato
-def conctato(request):
+def contacto(request):
     return  render(request, 'home/contacto.html')
