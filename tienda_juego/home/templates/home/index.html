@@ -1,34 +1,22 @@
+{% extends "base.html" %}
+<!--Con extends se puede agragar el contenido de base.html a esta pagina -->
 {% load static %}
 <!--carga la etiqueta static para poder usar archivos estaticos en el template -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %} Tienda de Video Juegos {% endblock %}
 
-    <title>tienda de video juegos</title>
+{% block content %}
+<div class="container mt-5" style="text-align: center;">
+    <h1 class="text-body">Bienvenidos a la tienda de video juegos</h1>
+    <p class="text-body">Exploras nuestro catalogo de juegos y disfruta de las mejor experiencias</p>
 
-    <!--carga la etiqueta static para poder usar archivos estaticos en el template css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-    crossorigin="anonymous">
+    <img src="{% static 'img/logo.png' %}" alt="Logo de la tienda" class="img-fluid mt-4" style="max-width: 500px;" >
 
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}  "> 
-    
-    <!--carga la etiqueta static para poder usar archivos estaticos en el template js-->
-    <script src="{% static 'js/script.js' %}"></script>
-   
-</head>
-<body>
-    <h1>Bienvenidos a la tienda de juegos</h1>
-     <p>Explora nuestro catalogo y disfruta</p>
+    <div class="alert alert-primary"> Nueva colección de juegos</div>
 
-     <footer>
-        <p>2025 tienda de juegos</p>
-        <a href="{%url 'contacto'%}">conctato</a>
-     </footer>
+    <div class="alert alert-warning"> Nuevas ofertas</div>
 
-     <img src="{% static 'img/logo.png'%}" alt="Logo de la tienda" width="200" height="200">
-</body>
-</html>
+    <div class="alert alert-danger"> Nueva experiencias exclusivas</div>
+</div>
+
+{% endblock %}

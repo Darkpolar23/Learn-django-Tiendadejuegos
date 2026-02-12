@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %} Tienda de Video Juegos {% endblock %}</title>
+
+    <!--carga la etiqueta static para poder usar archivos estaticos en el template css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}  "> 
+    
+    <!--carga la etiqueta static para poder usar archivos estaticos en el template js-->
+    <script src="{% static 'js/script.js' %}"></script>
+   
+</head>
+<body class="text-body">
+    <header class="">
+        <h1 class="h4 m-0">Tienda de Video Juegos</h1>
+        <button id="toggle-theme" class="btn btn-outline-light">Cambiar tema</button>
+
+    </header>
+
+    {% block content %}
+    <!-- ira el contenido de la especifico de la pagina -->
+   
+    {% endblock %}
+
+    <footer class="text-center mt-5 mb-3">
+        <p>@2025 Tienda de Video Juegos</p>
+        <a href="{% url 'home' %}" class="text-body">Inicio</a>
+        <a href="{% url 'contacto' %}" class="text-body ms-3">Contacto</a>
+    </footer>
+</body>
+</html>

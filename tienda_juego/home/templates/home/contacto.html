@@ -1,25 +1,34 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Conctatos</title>
+{% block title %} Contacto {% endblock %}
 
-    <!--carga la etiqueta static para poder usar archivos estaticos en el template css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-    crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}  "> 
-    
-    <!--carga la etiqueta static para poder usar archivos estaticos en el template js-->
-    <script src="{% static 'js/script.js' %}"></script>
-   
-</head>
-<body>
-    <h1>Esta en el conctato</h1>
-</body>
-</html>
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-body">Contacto</h1>
+    <p class="text-body">Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos. Estamos aquí para ayudarte.</p>
+
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Full name</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your full name">
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Phone number</label>
+  <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Your phone number">
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label" aria-placeholder="message">Your message</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+  <button type="button" class="btn btn-primary mt-3">Enviar mensaje</button>
+</div>
+{% endblock %}
