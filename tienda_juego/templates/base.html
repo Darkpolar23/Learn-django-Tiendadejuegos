@@ -19,6 +19,7 @@
     <script src="{% static 'js/script.js' %}"></script>
 
     <script src="https://kit.fontawesome.com/2d4755b001.js" crossorigin="anonymous"></script>
+   
 </head>
 
 <body class="text-body">
@@ -75,10 +76,63 @@
 
     {% endblock %}
 
-    <footer class="text-center mt-5 mb-3">
-        <p>@2025 Tienda de Video Juegos</p>
-        <a href="{% url 'home' %}" class="text-body">Inicio</a>
-        <a href="{% url 'contacto' %}" class="text-body ms-3">Contacto</a>
+    <footer class="site-footer mt-5 mb-3 text-light">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <div class="footer-brand">
+                        <a href="{% url 'home' %}" class="text-decoration-none text-light">
+                            <i class="fa-solid fa-gamepad me-2"></i> Tienda de Video Juegos
+                        </a>
+                    </div>
+                    <p class="small mt-2">Tu destino para comprar juegos, consolas y accesorios. Atención al cliente dedicada y envíos seguros.</p>
+                    <div class="social mt-3">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2">
+                    <h6 class="text-uppercase">Enlaces</h6>
+                    <ul class="list-unstyled footer-links mt-2">
+                        <li><a href="{% url 'home' %}">Inicio</a></li>
+                        <li><a href="#">Tienda</a></li>
+                        <li><a href="#">Noticias</a></li>
+                        <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <h6 class="text-uppercase">Soporte</h6>
+                    <ul class="list-unstyled mt-2 small">
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h6 class="text-uppercase">Newsletter</h6>
+                    <p class="small mt-2">Recibe ofertas y novedades directamente en tu correo.</p>
+                    <form class="newsletter d-flex" action="#" method="post">
+                        <input type="email" class="form-control form-control-sm me-2" placeholder="Tu email" aria-label="Email" />
+                        <button class="btn btn-primary btn-sm" type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row bottom-bar align-items-center mt-4">
+                <div class="col-md-6 text-center text-md-start small">
+                    &copy; 2025 Tienda de Video Juegos. Todos los derechos reservados.
+                </div>
+                <div class="col-md-6 text-center text-md-end small">
+                    <a href="{% url 'home' %}" class="me-3">Política de cookies</a>
+                    <a href="{% url 'contacto' %}">Contacto</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS (necesario para el toggle del menú responsivo) -->
