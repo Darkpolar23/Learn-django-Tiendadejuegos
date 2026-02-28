@@ -9,7 +9,7 @@
     {% for juego in listado_juegos %}
     <div class="col">
         <div class="card h-100">
-            <img src="{% static 'img/logo.png' %}" class="card-img-top" alt="juegos">
+            <img src="{% static 'img/Cover/'%}{{ juego.imagen }}" class="card-img-top" alt="juegos">
             <div class="card-body">
                 <h5 class="card-title">{{ juego.nombre }}</h5>
                 <p class="card-text">Plataforma: {{ juego.plataformas|join:", " }}</p>
