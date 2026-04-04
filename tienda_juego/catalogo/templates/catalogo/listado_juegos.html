@@ -20,4 +20,44 @@
     </div>
     {% endfor %}
 </div>
+
+<!-- Paginación -->
+{% if listado_juegos.has_other_pages %}
+<nav aria-label="Paginación" class="mt-4">
+  <ul class="pagination justify-content-center">
+    {% if listado_juegos.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page=1">Primera</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="?page={{ listado_juegos.previous_page_number }}">Anterior</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled"><span class="page-link">Primera</span></li>
+    <li class="page-item disabled"><span class="page-link">Anterior</span></li>
+    {% endif %}
+
+    {% for num in listado_juegos.paginator.page_range %}
+    {% if listado_juegos.number == num %}
+    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+    {% if listado_juegos.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ listado_juegos.next_page_number }}">Siguiente</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="?page={{ listado_juegos.paginator.num_pages }}">Última</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled"><span class="page-link">Siguiente</span></li>
+    <li class="page-item disabled"><span class="page-link">Última</span></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+
 {% endblock %}
