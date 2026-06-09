@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from catalogo.models import Juego
 
@@ -16,3 +16,10 @@ def listado_juegos(request):
     
     return render(request, "catalogo/listado_juegos.html",
                    contexto_catalogo_juegos)
+
+def detalle_juego(request, pk):
+    juego = get_object_or_404(Juego, pk=pk) #obtiene el juego con el id pk o devuelve un error 404 si no existe
+    
+    contexto = {'juego': juego}
+    
+    return render(request, "catalogo/detalle_juego.html", contexto)
